@@ -2,13 +2,14 @@ package gin_cache
 
 import (
 	"bytes"
-	"github.com/Presbyter/gin-cache/cachestore"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"net/url"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Presbyter/gin-cache/cachestore"
+	"github.com/gin-gonic/gin"
 )
 
 const (

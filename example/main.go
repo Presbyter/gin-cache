@@ -17,7 +17,8 @@ func main() {
 
 	r := g.Use(TestMw1(), TestMw2())
 	r.GET("/timestamp", do())
-	store := cachestore.NewRedisStore([]string{"127.0.0.1:6379"}, "", 5*time.Second)
+	//store := cachestore.NewRedisStore([]string{"127.0.0.1:6379"}, "", 5*time.Second)
+	store := cachestore.NewMemoryCache(5 * time.Second)
 	r.GET("/cache_timestamp", gin_cache.CachePageAtomic(store, 2*time.Second, do()))
 
 	g.Run(":3000")

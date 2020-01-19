@@ -1,9 +1,10 @@
 package cachestore
 
 import (
+	"time"
+
 	"github.com/Presbyter/gin-cache/utils"
 	"github.com/go-redis/redis"
-	"time"
 )
 
 type redisStore struct {
